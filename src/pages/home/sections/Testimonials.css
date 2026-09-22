@@ -1,0 +1,120 @@
+.testimonials__brand {
+  color: var(--color-dark-green);
+}
+
+.testimonials__viewport {
+  overflow: hidden;
+}
+
+.testimonials__track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.testi-card {
+  flex: 0 0 min(480px, 86vw);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.testi-card__photo {
+  background: #9b9b9b;
+}
+
+.testi-card__body {
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testi-card__quote {
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+
+.testi-card__who {
+  margin-top: 20px;
+}
+
+.testi-card__name {
+  font-weight: 700;
+  color: var(--color-ink);
+  font-size: 15.5px;
+}
+
+.testi-card__role {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-top: 2px;
+}
+
+/* Tombol panah bundar - dipakai juga oleh section lain */
+.wc-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  perspective: 400px;
+}
+
+.wc-arrow:hover:not(:disabled) {
+  background: var(--color-dark-green);
+  border-color: var(--color-dark-green);
+  color: #fff;
+}
+
+.wc-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.wc-arrow__icon {
+  display: inline-block;
+  font-size: 17px;
+}
+
+.wc-arrow__icon--flip {
+  animation: arrowFlip 0.45s ease;
+}
+
+@keyframes arrowFlip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.testimonials__nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.testimonials__nav--right {
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .testi-card {
+    grid-template-columns: 1fr;
+  }
+
+  .testi-card__photo {
+    min-height: 160px;
+  }
+}

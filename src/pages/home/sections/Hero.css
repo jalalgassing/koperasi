@@ -1,0 +1,137 @@
+.hero {
+  padding: 72px 0 96px;
+}
+
+.hero__grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero__copy {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 680px;
+}
+
+.hero__title {
+  font-size: 40px;
+  line-height: 1.22;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hero__title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero__title-line--rotator {
+  display: flex;
+  align-items: baseline;
+  min-height: 1.3em;
+}
+
+.hero__rotator {
+  position: relative;
+  display: inline-block;
+}
+
+.hero__rotator-text {
+  display: inline-block;
+  color: var(--color-ink);
+}
+
+/* Kotak oren yang "menyapu" dari kanan ke kiri (menyisakan sisi kiri
+   dulu), sehingga tulisan tampak terungkap dari kiri ke kanan. */
+.hero__sweep {
+  position: absolute;
+  inset: -2px -6px;
+  background: var(--color-amber);
+  border-radius: 6px;
+  animation: heroSweepReveal 1.7s cubic-bezier(0.65, 0, 0.35, 1) both;
+  pointer-events: none;
+}
+
+@keyframes heroSweepReveal {
+  0% {
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+  38% {
+    transform-origin: left center;
+    transform: scaleX(1);
+  }
+  55% {
+    transform-origin: right center;
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: right center;
+    transform: scaleX(0);
+  }
+}
+
+.hero__subtitle {
+  margin-top: 24px;
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 480px;
+}
+
+.hero__cta {
+  margin-top: 36px;
+}
+
+.hero__art {
+  flex: 0 0 340px;
+  width: 340px;
+  aspect-ratio: 0.94;
+  border-radius: var(--radius-lg);
+  background: #dcdcdc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b6b6b;
+  font-size: 15px;
+}
+
+@media (max-width: 1100px) {
+  .hero__art {
+    flex-basis: 280px;
+    width: 280px;
+  }
+
+  .hero__title {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__copy {
+    max-width: none;
+  }
+
+  .hero__title-line {
+    white-space: normal;
+  }
+
+  .hero__art {
+    order: -1;
+    width: 100%;
+    flex-basis: auto;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 26px;
+  }
+}

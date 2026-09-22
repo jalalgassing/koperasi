@@ -1,0 +1,104 @@
+.what-changes__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.wc-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  min-height: 420px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.wc-card:hover,
+.wc-card:focus-visible {
+  transform: translateY(-4px);
+}
+
+.wc-card__art {
+  flex: 1;
+  background: #9b9b9b;
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.wc-card__footer {
+  background: var(--color-teal);
+  color: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wc-card__footer .wc-card__title {
+  color: #fff;
+  font-size: 20px;
+}
+
+.wc-card__footer .wc-card__desc {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.wc-card--active {
+  background: var(--color-navy);
+  color: #fff;
+  padding: 36px 32px;
+  justify-content: flex-start;
+  min-height: 420px;
+  animation: wcExpand 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes wcExpand {
+  from {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.wc-card--active .wc-card__title {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.wc-card--active .wc-card__desc {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+@media (max-width: 960px) {
+  .what-changes__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .wc-card,
+  .wc-card--active {
+    min-height: unset;
+  }
+
+  .wc-card__art {
+    min-height: 200px;
+  }
+}

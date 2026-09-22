@@ -1,0 +1,36 @@
+.layanan-hero {
+  padding: 72px 0 40px;
+}
+
+.layanan-hero__title {
+  font-size: 40px;
+  max-width: 640px;
+}
+
+.layanan-hero__desc {
+  margin-top: 20px;
+  font-size: 16.5px;
+  line-height: 1.65;
+  max-width: 560px;
+}
+
+.layanan-placeholder {
+  padding: 40px 0 120px;
+}
+
+.layanan-placeholder__inner {
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-size: 14.5px;
+}
+
+@media (max-width: 640px) {
+  .layanan-hero__title {
+    font-size: 30px;
+  }
+}
