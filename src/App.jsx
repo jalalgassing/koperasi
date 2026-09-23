@@ -5,6 +5,10 @@ import Footer from "./components/Footer.jsx";
 import HomePage from "./pages/home/HomePage.jsx";
 import LayananPage from "./pages/layanan/LayananPage.jsx";
 import PlaceholderPage from "./pages/placeholder/PlaceholderPage.jsx";
+import LoginPage from "./pages/auth/LoginPage.jsx";
+import RegisterPage from "./pages/auth/RegisterPage.jsx";
+
+const AUTH_ROUTES = ["/masuk", "/daftar"];
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -15,10 +19,13 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const { pathname } = useLocation();
+  const isAuthRoute = AUTH_ROUTES.includes(pathname);
+
   return (
     <>
       <ScrollToTop />
-      <Navbar />
+      {!isAuthRoute && <Navbar />}
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -27,11 +34,11 @@ export default function App() {
             path="/tentang-kami"
             element={<PlaceholderPage title="Tentang Kami" />}
           />
-          <Route path="/masuk" element={<PlaceholderPage title="Masuk" />} />
-          <Route path="/daftar" element={<PlaceholderPage title="Daftar" />} />
+          <Route path="/masuk" element={<LoginPage />} />
+          <Route path="/daftar" element={<RegisterPage />} />
         </Routes>
       </main>
-      <Footer />
+      {!isAuthRoute && <Footer />}
     </>
   );
 }
