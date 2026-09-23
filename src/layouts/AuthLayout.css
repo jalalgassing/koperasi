@@ -1,0 +1,103 @@
+.auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-navy);
+  padding: 40px 20px;
+}
+
+.auth__card {
+  width: 100%;
+  max-width: 960px;
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.auth__visual {
+  position: relative;
+  background: var(--color-surface);
+  min-height: 300px;
+}
+
+.auth__logo {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
+
+.auth__logo img {
+  height: 34px;
+  width: auto;
+}
+
+/* Login: visual kiri, form kanan (urutan DOM sudah sesuai) */
+.auth__card--image-left .auth__visual {
+  order: 1;
+}
+.auth__card--image-left .auth__panel {
+  order: 2;
+}
+
+/* Daftar: visual kanan, form kiri -> logo pindah ke pojok kanan atas */
+.auth__card--image-right .auth__visual {
+  order: 2;
+}
+.auth__card--image-right .auth__panel {
+  order: 1;
+}
+.auth__card--image-right .auth__logo {
+  left: auto;
+  right: 28px;
+}
+
+.auth__panel {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 48px;
+  overflow-y: auto;
+}
+
+.auth__back {
+  align-self: flex-start;
+  padding: 10px 22px;
+  font-size: 14px;
+}
+
+.auth__page-label {
+  margin-top: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+@media (max-width: 860px) {
+  .auth {
+    padding: 0;
+  }
+
+  .auth__card {
+    max-width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .auth__visual {
+    display: none;
+  }
+
+  .auth__card--image-left .auth__panel,
+  .auth__card--image-right .auth__panel {
+    order: 1;
+  }
+
+  .auth__panel {
+    padding: 32px 24px;
+  }
+}
