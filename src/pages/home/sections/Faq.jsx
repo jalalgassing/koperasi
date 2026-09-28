@@ -11,7 +11,11 @@ export default function Faq() {
     <section className="section faq">
       <div className="container faq__layout">
         <div className="faq__intro">
-          <h2>Kami Punya Jawabannya.</h2>
+          <h2>
+            Punya Pertanyaan?
+            <br />
+            Kami Punya Jawabannya.
+          </h2>
           <p>
             Temukan informasi yang Anda butuhkan tentang Parakarsa, layanan kami, dan
             cara memulai perjalanan bersama kami.

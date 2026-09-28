@@ -29,6 +29,9 @@ export default function Calculator() {
             Anda untuk mengetahui estimasi biaya yang dapat dihemat dengan menggunakan{" "}
             <strong>Parakarsa</strong>.
           </p>
+          <p className="calc-heading__note">
+            Estimasi biaya dapat berubah2 tergantung pusat AI*
+          </p>
         </div>
 
         <div className="calc-panel">

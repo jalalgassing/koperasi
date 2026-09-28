@@ -1,3 +1,8 @@
+import ServiceCarousel from "./ServiceCarousel.jsx";
+import Calculator from "../home/sections/Calculator.jsx";
+import Collaboration from "../home/sections/Collaboration.jsx";
+import Faq from "../home/sections/Faq.jsx";
+import CtaBanner from "../home/sections/CtaBanner.jsx";
 import "./LayananPage.css";
 
 export default function LayananPage() {
@@ -17,15 +22,11 @@ export default function LayananPage() {
         </div>
       </section>
 
-      {/*
-        Konten daftar layanan (kartu layanan, kategori, dsb.) menyusul setelah
-        desain dari tim lengkap. Sengaja dikosongkan dulu sesuai instruksi.
-      */}
-      <section className="layanan-placeholder">
-        <div className="container layanan-placeholder__inner">
-          <p>Daftar layanan akan ditambahkan di sini.</p>
-        </div>
-      </section>
+      <ServiceCarousel />
+      <Calculator />
+      <Collaboration />
+      <Faq />
+      <CtaBanner />
     </>
   );
 }

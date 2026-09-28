@@ -1,0 +1,165 @@
+.tk-hero-banner {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: #dcdcdc;
+  padding: 32px 40px 40px;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tk-hero-banner__logo {
+  align-self: flex-end;
+  height: 28px;
+  width: auto;
+  opacity: 0.55;
+}
+
+.tk-hero-banner__text {
+  max-width: 640px;
+}
+
+.tk-hero__title {
+  font-size: 32px;
+}
+
+.tk-hero__desc {
+  margin-top: 16px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--color-body);
+  max-width: 520px;
+}
+
+/* Kotak foto placeholder - dipakai di beberapa tempat di halaman ini */
+.tk-photo {
+  border-radius: var(--radius-lg);
+  background: #dcdcdc;
+  color: #6b6b6b;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+}
+
+.tk-photo--tall {
+  min-height: 100%;
+}
+
+/* Section kutipan founder */
+.tk-quote {
+  padding-top: 8px;
+}
+
+.tk-quote__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.tk-quote__col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tk-quote__card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 230px;
+}
+
+.tk-quote__text {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+
+.tk-quote__attribution {
+  margin-top: 24px;
+  font-size: 14.5px;
+  color: var(--color-muted);
+}
+
+/* Section "Bersama, Kami Bertumbuh" */
+.tk-growth__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.tk-growth__title {
+  font-size: 34px;
+}
+
+.tk-growth__desc {
+  margin-top: 20px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--color-body);
+  max-width: 480px;
+}
+
+.tk-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 32px;
+  max-width: 480px;
+}
+
+.tk-stats__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.tk-stat {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.tk-stat--wide {
+  width: 100%;
+}
+
+.tk-stat__value {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.tk-stat__label {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+@media (max-width: 860px) {
+  .tk-hero__title {
+    font-size: 26px;
+  }
+
+  .tk-quote__grid,
+  .tk-growth__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tk-quote__card {
+    min-height: unset;
+  }
+}
