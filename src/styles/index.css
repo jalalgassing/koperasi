@@ -80,7 +80,7 @@ img {
 }
 
 .section {
-  padding: 88px 0;
+  padding: 65px 0;  
 }
 
 .section-heading {
@@ -171,7 +171,7 @@ img {
 
 @media (max-width: 860px) {
   .section {
-    padding: 64px 0;
+    padding: 48px 0; 
   }
 
   .section-heading h2 {

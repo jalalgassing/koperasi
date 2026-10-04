@@ -1,6 +1,7 @@
 .intro {
-  padding: 40px 0 8px;
+  padding: 400px 0 440px;  
 }
+
 
 .intro__text {
   max-width: 780px;
@@ -24,8 +25,8 @@
   transform: translateY(0);
 }
 
-@media (max-width: 640px) {
-  .intro__text {
-    font-size: 21px;
+@media (max-width: 900px) {
+  .intro {
+    padding: 120px 0 140px;   
   }
 }
