@@ -1,0 +1,366 @@
+/* Halaman Haki Studio. Memakai ulang kelas .swf-tag, .swf-card__*, .swf-modal__*
+   dari SharedWorkforcePage.css, jadi tampilan tag, badge, hati, dan modal
+   identik dengan halaman sebelumnya. */
+
+.haki__intro h2 { font-size: 26px; }
+
+.haki__intro p {
+  margin-top: 10px;
+  max-width: 760px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-body);
+}
+
+/* Ringkasan angka */
+.haki__stats {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.6fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.haki-stat {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: #fff;
+  padding: 18px 20px;
+}
+
+.haki-stat__label { font-size: 13.5px; color: var(--color-muted); }
+.haki-stat__value { margin-top: 8px; font-size: 30px; font-weight: 700; color: var(--color-ink); }
+.haki-stat__sub { margin-top: 2px; font-size: 13px; color: var(--color-muted); }
+
+.haki-banner {
+  border-radius: 16px;
+  background: var(--color-dark-green);
+  color: #fff;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.haki-banner__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.haki-banner h3 { color: #fff; font-size: 15.5px; }
+.haki-banner p { margin-top: 4px; font-size: 12.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.78); }
+
+.haki-banner__btn {
+  margin-left: auto;
+  flex: 0 0 auto;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--color-amber);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 16px;
+}
+
+.haki-banner__btn:hover { background: var(--color-amber-hover); }
+
+/* Filter tag */
+.haki__tags {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.haki__tags-label { font-size: 13.5px; color: var(--color-muted); margin-right: 2px; }
+.haki__count { margin-top: 20px; font-size: 13.5px; color: var(--color-muted); }
+
+.haki__grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.haki-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.haki-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+
+/* Area ilustrasi kartu (pengganti foto) */
+.haki-card__art,
+.haki-modal__art {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.haki-card__art { aspect-ratio: 4 / 3; }
+.haki-modal__art { aspect-ratio: 16 / 9; }
+
+.haki-card__art::before,
+.haki-modal__art::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  right: -18%;
+  bottom: -38%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.haki-card__art::after,
+.haki-modal__art::after {
+  content: "";
+  position: absolute;
+  width: 38%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  left: -8%;
+  top: -16%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.haki-card__art--green { background: var(--color-dark-green); }
+.haki-card__art--amber { background: var(--color-amber); }
+.haki-card__art--teal { background: var(--color-teal); }
+.haki-card__art--navy { background: var(--color-navy); }
+
+.haki-card__art-icon {
+  position: relative;
+  z-index: 1;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.haki-card__art .swf-card__badge,
+.haki-modal__art .swf-card__badge { z-index: 2; }
+
+.haki-card__art--amber .swf-card__badge,
+.haki-modal__art.haki-card__art--amber .swf-card__badge { background: var(--color-dark-green); }
+
+.haki-card__meta {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-body);
+}
+
+.haki-card__meta + .swf-card__price { margin-top: 6px; }
+
+/* Cara kerja & pengajuan */
+.haki__section { margin-top: 40px; }
+.haki__section-title { font-size: 18px; }
+
+.haki-flow {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.haki-flow__item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 18px 20px 20px;
+}
+
+.haki-flow__num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-dark-green);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.haki-flow__item h4 { margin-top: 14px; font-size: 15px; }
+.haki-flow__item p { margin-top: 6px; font-size: 13px; line-height: 1.6; color: var(--color-body); }
+
+.haki-apps { margin-top: 16px; display: flex; flex-direction: column; gap: 16px; }
+
+.haki-app {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 18px 22px 20px;
+}
+
+.haki-app__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.haki-app__head h4 { font-size: 15.5px; }
+.haki-app__sub { margin-top: 4px; font-size: 13px; color: var(--color-muted); }
+
+.haki-status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.haki-status--done { background: #e5f3ee; color: var(--color-dark-green); }
+.haki-status--proc { background: var(--color-cream); color: var(--color-amber-hover); }
+.haki-status--wait { background: var(--color-surface); color: var(--color-body); }
+
+.haki-track {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.haki-track__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--color-muted);
+}
+
+.haki-track__step::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 22px;
+  right: 6px;
+  height: 2px;
+  background: var(--color-border);
+}
+
+.haki-track__step:last-child::before { display: none; }
+.haki-track__step--on::before { background: var(--color-dark-green); }
+
+.haki-track__dot {
+  position: relative;
+  z-index: 1;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.haki-track__step--on .haki-track__dot {
+  background: var(--color-dark-green);
+  border-color: var(--color-dark-green);
+}
+
+.haki-track__step--on .haki-track__label { color: var(--color-ink); font-weight: 500; }
+
+/* Isi modal */
+.haki-modal__list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.haki-modal__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--color-ink);
+}
+
+.haki-modal__list li span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-dark-green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+/* Notifikasi setelah klik "Ajukan Sekarang" */
+.haki-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 300;
+  max-width: 420px;
+  background: var(--color-dark-green);
+  color: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: var(--shadow-card);
+}
+
+.haki-toast svg { flex: 0 0 auto; margin-top: 3px; }
+
+.haki-toast button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 0 0 6px;
+  font-size: 13px;
+}
+
+@media (max-width: 1100px) {
+  .haki__stats { grid-template-columns: 1fr 1fr 1fr; }
+  .haki-banner { grid-column: 1 / -1; }
+  .haki-flow { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .haki__stats,
+  .haki-flow { grid-template-columns: 1fr; }
+  .haki-banner { flex-wrap: wrap; }
+  .haki-track__label { font-size: 11.5px; }
+}

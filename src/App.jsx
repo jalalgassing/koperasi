@@ -11,6 +11,7 @@ import DashboardLayout from "./layouts/DashboardLayout.jsx";
 import DashboardHomePage from "./pages/dashboard/DashboardHomePage.jsx";
 import AiGenerativeStudioPage from "./pages/dashboard/AiGenerativeStudioPage.jsx";
 import SharedWorkforcePage from "./pages/dashboard/SharedWorkforcePage.jsx";
+import HakiStudioPage from "./pages/dashboard/HakiStudioPage.jsx";
 import DashboardComingSoon from "./pages/dashboard/DashboardComingSoon.jsx";
 import { SIDEBAR_NAV } from "./data/sidebarNav.js";
 import { useAuth } from "./context/AuthContext.jsx";
@@ -44,6 +45,7 @@ const READY_PAGES = {
   "/main": <DashboardHomePage />,
   "/main/ai-generative-studio": <AiGenerativeStudioPage />,
   "/main/shared-workforce": <SharedWorkforcePage />,
+  "/main/haki-studio": <HakiStudioPage />,
 };
 
 export default function App() {
