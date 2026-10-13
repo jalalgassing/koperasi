@@ -20,7 +20,18 @@ export const SIDEBAR_NAV = [
         icon: "workforce",
         status: "ready",
       },
-      { label: "Haki Studio", to: "/main/haki-studio", icon: "haki", status: "ready" },
+      {
+        label: "Haki Studio",
+        to: "/main/haki-studio",
+        icon: "haki",
+        status: "ready",
+      },
+      {
+        label: "Kartu Anggota",
+        to: "/main/member-card",
+        icon: "card",
+        status: "ready",
+      },
     ],
   },
   {

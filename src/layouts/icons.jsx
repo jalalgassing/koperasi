@@ -8,6 +8,7 @@ export const icons = {
   studio: (p) => <svg {...common} {...p}><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="2.5" /></svg>,
   workforce: (p) => <svg {...common} {...p}><circle cx="8" cy="8" r="3" /><circle cx="16" cy="8" r="3" /><path d="M2 20c0-3 3-5 6-5s6 2 6 5" /><path d="M14 15c3 0 6 2 6 5" /></svg>,
   haki: (p) => <svg {...common} {...p}><path d="M12 3v18" /><path d="M5 7l-3 5a3 3 0 006 0z" /><path d="M19 7l-3 5a3 3 0 006 0z" /><path d="M5 7h14" /><path d="M9 21h6" /></svg>,
+  card: (p) => (<svg {...common} {...p}><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 10h18" /><path d="M7 15h4" /></svg>),
   cart: (p) => <svg {...common} {...p}><circle cx="9" cy="20" r="1.4" /><circle cx="17" cy="20" r="1.4" /><path d="M3 4h2l2.4 11.2a2 2 0 002 1.8h7.2a2 2 0 002-1.6L20 8H6" /></svg>,
   report: (p) => <svg {...common} {...p}><path d="M7 3h7l5 5v13H7z" /><path d="M14 3v5h5" /><path d="M9 13h6M9 17h6" /></svg>,
   team: (p) => <svg {...common} {...p}><circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2.4" /><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5" /><path d="M15.5 15.2c2.5.3 4.5 2 4.5 4.8" /></svg>,
