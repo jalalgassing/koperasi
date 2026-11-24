@@ -1,32 +1,27 @@
+import LayananHero from "./sections/LayananHero.jsx";
+import FeaturedServices from "./sections/FeaturedServices.jsx";
+import JoinBanner from "./sections/JoinBanner.jsx";
 import ServiceCarousel from "./ServiceCarousel.jsx";
-import Calculator from "../home/sections/Calculator.jsx";
-import Collaboration from "../home/sections/Collaboration.jsx";
-import Faq from "../home/sections/Faq.jsx";
-import CtaBanner from "../home/sections/CtaBanner.jsx";
+import HowItWorks from "./sections/HowItWorks.jsx";
+import ForWhom from "./sections/ForWhom.jsx";
+import ServiceFaq from "./sections/ServiceFaq.jsx";
+import ServiceCta from "./sections/ServiceCta.jsx";
+import "../../styles/mint.css";
 import "./LayananPage.css";
+import "./sections/LayananSections.css";
 
 export default function LayananPage() {
   return (
     <>
-      <section className="layanan-hero">
-        <div className="container">
-          <h1 className="layanan-hero__title">
-            Solusi yang mendukung
-            <br />
-            pertumbuhan bisnis anda
-          </h1>
-          <p className="layanan-hero__desc">
-            Berbagai layanan dan teknologi yang dirancang untuk membantu UMKM,
-            koperasi, dan badan usaha kecil-menengah berkembang lebih mudah.
-          </p>
-        </div>
-      </section>
+      <LayananHero />
+      <FeaturedServices />
+      <JoinBanner />
 
       <ServiceCarousel />
-      <Calculator />
-      <Collaboration />
-      <Faq />
-      <CtaBanner />
+      <HowItWorks />
+      <ForWhom />
+      <ServiceFaq />
+      <ServiceCta />
     </>
   );
 }

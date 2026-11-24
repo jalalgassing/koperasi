@@ -1,0 +1,73 @@
+/* Section baru halaman Tentang Kami (prefix tks-) - hanya warna palet website */
+
+/* ===== Visi, Misi & Nilai ===== */
+.tks-values { padding-bottom: 24px; }
+.tks-panel {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;
+  padding: 64px 56px 156px; border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #0a453b 0%, #0d5a4c 100%);
+}
+.tks-panel__rings { position: absolute; z-index: -1; top: -120px; right: -120px; width: 520px; height: 520px; fill: none; stroke: rgba(143, 201, 204, 0.28); stroke-width: 1.5; }
+.tks-panel__dots { position: absolute; z-index: -1; left: 28px; bottom: 130px; width: 150px; height: 110px; background-image: radial-gradient(rgba(143, 201, 204, 0.5) 1.6px, transparent 1.7px); background-size: 18px 18px; }
+.tks-pill { display: inline-block; padding: 7px 16px; border-radius: var(--radius-pill); background: var(--color-amber); color: #fff; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.tks-pill--teal { background: var(--color-teal); color: var(--color-dark-green); }
+.tks-panel__vision h2 { margin-top: 22px; color: #fff; font-size: 38px; line-height: 1.3; }
+.tks-panel__vision em { font-style: normal; color: var(--color-teal-light); background: linear-gradient(transparent 82%, var(--color-amber) 82%, var(--color-amber) 90%, transparent 90%); }
+.tks-mission { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; position: relative; }
+.tks-mission::before { content: ""; position: absolute; left: 33px; top: 34px; bottom: 34px; width: 2px; background: rgba(143, 201, 204, 0.35); }
+.tks-mission__item { position: relative; display: flex; gap: 16px; align-items: flex-start; padding: 16px 18px; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: var(--radius-md); background: rgba(255, 255, 255, 0.07); transition: background 0.25s, transform 0.25s, border-color 0.25s; }
+.tks-mission__item:hover { background: rgba(255, 255, 255, 0.14); border-color: var(--color-teal-light); transform: translateX(6px); }
+.tks-mission__num { flex: 0 0 32px; height: 32px; border-radius: 50%; background: var(--color-teal-light); color: var(--color-dark-green); display: grid; place-items: center; font-family: var(--font-heading); font-size: 14px; font-weight: 700; }
+.tks-mission strong { display: block; color: #fff; font-family: var(--font-heading); font-size: 16.5px; font-weight: 600; }
+.tks-mission p { margin-top: 4px; color: rgba(255, 255, 255, 0.78); font-size: 14px; line-height: 1.55; }
+.tks-panel__foot { position: absolute; left: 56px; bottom: 96px; display: flex; align-items: center; gap: 14px; color: var(--color-teal-light); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.tks-panel__foot span { width: 44px; height: 2px; background: var(--color-amber); }
+
+.tks-cards { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: -64px 32px 0; }
+.tks-card { position: relative; overflow: hidden; padding: 28px 24px 26px; border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-card); transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease; }
+.tks-card__n { position: absolute; top: 10px; right: 16px; font-family: var(--font-heading); font-size: 46px; font-weight: 800; color: var(--color-surface); line-height: 1; transition: color 0.25s; }
+.tks-card__icon { position: relative; width: 52px; height: 52px; border-radius: 16px; background: var(--color-teal-light); color: var(--color-dark-green); display: grid; place-items: center; transition: background 0.25s, color 0.25s; }
+.tks-card h4 { position: relative; margin-top: 20px; font-size: 19px; transition: color 0.25s; }
+.tks-card p { position: relative; margin-top: 8px; font-size: 14.5px; line-height: 1.6; transition: color 0.25s; }
+.tks-card:hover { transform: translateY(-6px); background: var(--color-dark-green); box-shadow: 0 18px 36px rgba(10, 69, 59, 0.3); }
+.tks-card:hover h4 { color: #fff; }
+.tks-card:hover p { color: rgba(255, 255, 255, 0.8); }
+.tks-card:hover .tks-card__icon { background: var(--color-amber); color: #fff; }
+.tks-card:hover .tks-card__n { color: rgba(255, 255, 255, 0.1); }
+
+/* ===== Hubungi kami (warna teal website) ===== */
+.tks-contact__box { position: relative; overflow: hidden; isolation: isolate; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 64px 56px; border-radius: var(--radius-lg); background: linear-gradient(135deg, #5eb1b8 0%, #8fc9cc 100%); }
+.tks-contact__ring { position: absolute; z-index: -1; border-radius: 50%; border: 1.5px solid rgba(10, 69, 59, 0.18); }
+.tks-contact__ring--a { width: 420px; height: 420px; left: -140px; bottom: -200px; }
+.tks-contact__ring--b { width: 260px; height: 260px; left: -70px; bottom: -130px; }
+.tks-contact__badge { display: inline-block; padding: 8px 18px; border-radius: var(--radius-pill); background: var(--color-dark-green); color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: 0.05em; transform: rotate(-3deg); box-shadow: 0 6px 14px rgba(10, 69, 59, 0.25); }
+.tks-contact__copy h2 { margin-top: 24px; color: var(--color-dark-green); font-size: 38px; line-height: 1.25; }
+.tks-contact__copy h2 span { color: #fff; text-shadow: 0 2px 0 rgba(10, 69, 59, 0.25); }
+.tks-contact__copy > p { margin-top: 18px; max-width: 440px; color: #08362e; font-size: 16px; line-height: 1.7; }
+.tks-contact__list { display: flex; flex-direction: column; gap: 14px; }
+.tks-channel { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: var(--radius-lg); background: #fff; box-shadow: 0 10px 24px rgba(10, 69, 59, 0.16); transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
+.tks-channel:hover { transform: translateX(8px); box-shadow: 0 14px 30px rgba(10, 69, 59, 0.26); background: var(--color-dark-green); }
+.tks-channel__icon { flex: 0 0 48px; height: 48px; border-radius: 14px; background: var(--color-teal-light); color: var(--color-dark-green); display: grid; place-items: center; transition: background 0.2s, color 0.2s; }
+.tks-channel__text { flex: 1; min-width: 0; }
+.tks-channel small { display: block; font-size: 12.5px; color: var(--color-muted); transition: color 0.2s; }
+.tks-channel strong { display: block; margin-top: 2px; font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--color-ink); overflow-wrap: anywhere; transition: color 0.2s; }
+.tks-channel i { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--color-amber); color: #fff; font-style: normal; display: grid; place-items: center; transition: transform 0.2s; }
+.tks-channel:hover small { color: var(--color-teal-light); }
+.tks-channel:hover strong { color: #fff; }
+.tks-channel:hover .tks-channel__icon { background: var(--color-teal); color: #fff; }
+.tks-channel:hover i { transform: rotate(-45deg); }
+
+@media (max-width: 960px) {
+  .tks-panel { grid-template-columns: 1fr; gap: 36px; padding: 44px 28px 148px; }
+  .tks-panel__vision h2 { font-size: 30px; }
+  .tks-panel__foot { left: 28px; }
+  .tks-cards { grid-template-columns: 1fr 1fr; margin: -64px 16px 0; }
+  .tks-contact__box { grid-template-columns: 1fr; padding: 40px 24px; gap: 32px; }
+  .tks-contact__copy h2 { font-size: 30px; }
+}
+@media (max-width: 520px) {
+  .tks-panel__vision h2 { font-size: 26px; }
+  .tks-cards { grid-template-columns: 1fr; margin: -64px 8px 0; }
+  .tks-mission__item:hover { transform: none; }
+}

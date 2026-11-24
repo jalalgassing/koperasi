@@ -1,7 +1,13 @@
-import Faq from "../home/sections/Faq.jsx";
-import CtaBanner from "../home/sections/CtaBanner.jsx";
-import logo from "../../assets/images/logo.png";
+import AboutIntro from "./sections/AboutIntro.jsx";
+import AboutPrinciples from "./sections/AboutPrinciples.jsx";
+import AboutValues from "./sections/AboutValues.jsx";
+import AboutContact from "./sections/AboutContact.jsx";
+import { IconArrow } from "../../components/MintIcons.jsx";
+import gedung from "../../assets/images/mockup/gedung-parakarsa.png";
+import "../../styles/mint.css";
 import "./TentangKamiPage.css";
+import "./sections/TentangKamiSections.css";
+import "./sections/TentangKamiMockup.css";
 
 const STATS = [
   { value: "2019", label: "Berdiri tahun", wide: true },
@@ -10,27 +16,36 @@ const STATS = [
 ];
 
 export default function TentangKamiPage() {
+  const goKenali = () => {
+    document.getElementById("siapa-kami")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <>
-      <section className="section tk-hero">
-        <div className="container">
-          <div className="tk-hero-banner">
-            <img src={logo} alt="" className="tk-hero-banner__logo" aria-hidden="true" />
-            <div className="tk-hero-banner__text">
-              <h1 className="tk-hero__title">
-                Solusi yang mendukung
-                <br />
-                pertumbuhan bisnis anda
-              </h1>
-              <p className="tk-hero__desc">
-                Berbagai layanan dan teknologi yang dirancang untuk membantu
-                UMKM, koperasi, dan badan usaha kecil-menengah berkembang
-                lebih mudah.
-              </p>
-            </div>
+      <section className="mk-hero tkh">
+        <div className="container tkh__inner">
+          <div className="tkh__copy">
+            <span className="mk-pill">Tentang Kami</span>
+            <h1 className="mk-hero__title">
+              Mengenal Parakarsa,
+              <br />
+              tempat usaha kecil bertumbuh bersama
+            </h1>
+            <p className="mk-hero__desc">
+              Parakarsa adalah startup yang memberdayakan UMKM, koperasi,
+              dan badan usaha kecil-menengah lewat teknologi, data, dan
+              ekosistem yang kolaboratif.
+            </p>
+            <button type="button" className="btn btn-primary mk-hero__cta" onClick={goKenali}>
+              Kenali Lebih Lanjut <IconArrow size={16} />
+            </button>
           </div>
         </div>
+        <img className="tkh__photo" src={gedung} alt="Gedung kantor Parakarsa" />
       </section>
+
+      <AboutIntro />
+      <AboutPrinciples />
 
       <section className="section tk-quote">
         <div className="container tk-quote__grid">
@@ -92,8 +107,8 @@ export default function TentangKamiPage() {
         </div>
       </section>
 
-      <Faq />
-      <CtaBanner />
+      <AboutValues />
+      <AboutContact />
     </>
   );
 }

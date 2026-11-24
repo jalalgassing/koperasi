@@ -2,13 +2,29 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/src/assets/images/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Parakarsa — Satu Platform untuk Menghubungkan & Bertransformasi</title>
     <meta
       name="description"
       content="Parakarsa membantu UMKM dan koperasi mengakses teknologi Cloud & AI, melindungi HAKI, dan berkolaborasi dalam satu ekosistem digital."
     />
+
+    <!-- ==== PWA: ikon & warna browser ================================= -->
+    <!-- Catatan: <link rel="manifest"> TIDAK ditulis manual di sini.
+         vite-plugin-pwa menyuntikkannya otomatis saat build/dev. -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/pwa-192x192.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0a453b" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- Safari / iOS: buka tanpa address bar saat di-add ke Home Screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Parakarsa" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="Parakarsa" />
+    <meta name="format-detection" content="telephone=no" />
   </head>
   <body>
     <div id="root"></div>

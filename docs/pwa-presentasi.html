@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Parakarsa · PWA — Materi Presentasi PIC</title>
+<style>
+  :root {
+    --green:#0a453b; --green-2:#0d5a4c; --cream:#fcf0de; --amber:#cc7817;
+    --ink:#17181a; --body:#4b5563; --line:#e6e6e6; --soft:#f4f6f5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#eef1ef;color:var(--body);
+       font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+       font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .page{max-width:1040px;margin:28px auto;background:#fff;padding:0 0 40px;
+        box-shadow:0 18px 50px rgba(10,20,30,.13);border-radius:18px;overflow:hidden}
+  header{background:var(--green);color:var(--cream);padding:34px 44px 30px;position:relative}
+  header:after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;
+               border:1px solid rgba(252,240,222,.18);border-radius:50%}
+  header .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px;letter-spacing:.06em}
+  header .dot{width:11px;height:11px;border-radius:3px;background:var(--amber);display:inline-block}
+  header h1{font-family:"Poppins",-apple-system,"Segoe UI",sans-serif;color:#fff;
+            font-size:33px;line-height:1.25;margin:22px 0 8px;font-weight:700}
+  header p{margin:0;color:rgba(252,240,222,.8);font-size:14px;max-width:640px}
+  .badges{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+  .badge{background:rgba(252,240,222,.12);border:1px solid rgba(252,240,222,.25);
+         padding:6px 12px;border-radius:999px;font-size:11.5px;font-weight:600;letter-spacing:.02em}
+  main{padding:0 44px}
+  section{padding:30px 0;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:0}
+  h2{font-family:"Poppins",-apple-system,"Segoe UI",sans-serif;color:var(--ink);
+     font-size:19px;margin:0 0 4px;font-weight:700}
+  .kicker{color:var(--amber);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+  .sub{color:#8a8f98;font-size:12.5px;margin:0 0 20px}
+  .hero-quote{background:var(--cream);border-left:5px solid var(--amber);border-radius:0 12px 12px 0;
+              padding:20px 24px;margin:0 0 4px;color:var(--green);font-size:16.5px;font-weight:600;line-height:1.55}
+  .hero-quote small{display:block;color:#8a7a60;font-size:12px;font-weight:400;margin-top:8px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .card .num{font-family:"Poppins",sans-serif;font-size:11px;font-weight:700;color:var(--amber);letter-spacing:.1em}
+  .card h3{margin:6px 0 8px;color:var(--green);font-size:15px;font-weight:700}
+  .card p{margin:0;font-size:12.5px;line-height:1.55}
+  .card code{background:#e3e9e6;color:var(--green);padding:1px 5px;border-radius:4px;font-size:11px}
+
+  .analogy{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:stretch;margin-top:6px}
+  .ana{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+  .ana.win{background:var(--green);border-color:var(--green);color:var(--cream)}
+  .ana h3{margin:0 0 8px;font-size:14px;color:var(--ink)}
+  .ana.win h3{color:#fff}
+  .ana p{margin:0;font-size:12.5px}
+  .ana.win p{color:rgba(252,240,222,.85)}
+  .arrow{display:grid;place-items:center;font-size:22px;color:var(--amber);font-weight:700}
+
+  ol.flow{list-style:none;counter-reset:f;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px}
+  ol.flow li{counter-increment:f;position:relative;padding:10px 0 10px 42px;font-size:12.7px;border-bottom:1px dashed #ececec}
+  ol.flow li:before{content:counter(f,decimal-leading-zero);position:absolute;left:0;top:9px;
+    width:28px;height:28px;border-radius:8px;background:var(--green);color:var(--cream);
+    display:grid;place-items:center;font-size:11px;font-weight:700;font-family:"Poppins",sans-serif}
+  ol.flow li b{color:var(--green)}
+
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--green);color:var(--cream);font-size:11.5px;font-weight:600;letter-spacing:.02em}
+  tbody tr:nth-child(even){background:#fafbfa}
+  td.hl{background:rgba(204,120,23,.09);font-weight:600;color:var(--green)}
+  th:first-child,td:first-child{width:22%;font-weight:600;color:var(--ink)}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .box{border-radius:12px;padding:18px;font-size:12.5px}
+  .box.yes{background:#eef6f2;border:1px solid #cfe6da}
+  .box.no{background:#fdf3ee;border:1px solid #f0d9c9}
+  .box h3{margin:0 0 10px;font-size:14px;color:var(--green)}
+  .box.no h3{color:#a05a1f}
+  .box ul{margin:0;padding-left:18px}
+  .box li{margin-bottom:5px}
+
+  details{background:var(--soft);border:1px solid var(--line);border-radius:10px;margin-bottom:8px;padding:12px 16px}
+  summary{cursor:pointer;font-weight:600;color:var(--green);font-size:13px}
+  details p{margin:10px 0 0;font-size:12.5px}
+
+  .verify{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .v{background:var(--green);color:var(--cream);border-radius:8px;padding:8px 12px;font-size:11.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  footer{background:var(--soft);padding:20px 44px;font-size:11.5px;color:#8a8f98;text-align:center}
+  footer b{color:var(--green)}
+
+  @media (max-width:760px){
+    .page{margin:0;border-radius:0}
+    header,main,footer{padding-left:22px;padding-right:22px}
+    .grid3,.two,ol.flow{grid-template-columns:1fr}
+    .analogy{grid-template-columns:1fr;gap:8px}
+    .arrow{transform:rotate(90deg)}
+  }
+  @media print{
+    body{background:#fff;font-size:11px}
+    .page{margin:0;box-shadow:none;border-radius:0;max-width:none}
+    section{padding:16px 0;break-inside:avoid}
+    header{padding:22px}
+    main{padding:0 22px}
+    details{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="brand"><span class="dot"></span> PARAKARSA · KOPERASI DIGITAL</div>
+    <h1>Mengubah Web Menjadi PWA</h1>
+    <p>Materi ringkas untuk presentasi ke PIC — apa itu PWA, bagaimana cara kerjanya, dan mengapa kita tidak perlu Flutter.</p>
+    <div class="badges">
+      <span class="badge">React + Vite tetap dipakai</span>
+      <span class="badge">Tanpa rewrite UI</span>
+      <span class="badge">1 plugin: vite-plugin-pwa</span>
+      <span class="badge">Terpasang di Android</span>
+      <span class="badge">Bisa offline</span>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="kicker">01 · Kalimat utama</div>
+      <h2>Apa itu PWA?</h2>
+      <p class="sub">Hafalkan satu kalimat ini, lalu jelaskan dengan analogi di bawah.</p>
+      <div class="hero-quote">
+        PWA itu <b>website biasa</b> yang dikasih <b>"identitas aplikasi"</b> dan <b>"otak cache"</b>,
+        sehingga bisa dipasang di HP Android, dibuka fullscreen tanpa address bar, dan tetap jalan walau internet mati
+        — tanpa harus bikin aplikasi native atau Flutter.
+        <small>PWA bukan aplikasi baru, bukan framework baru, bukan bahasa baru. Ini kemampuan tambahan pada website yang sudah ada.</small>
+      </div>
+    </section>
+
+    <section>
+      <div class="kicker">02 · Analogi</div>
+      <h2>Cara paling mudah menjelaskannya</h2>
+      <p class="sub">Pakai perumpamaan brosur — ampuh untuk audiens non-teknis.</p>
+      <div class="analogy">
+        <div class="ana">
+          <h3>Website biasa = brosur di kantor</h3>
+          <p>Tiap mau baca harus datang lagi ke kantor (request ke server). Kalau kantor tutup / internet mati, tidak bisa baca.</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="ana win">
+          <h3>PWA = brosur yang difotokopi ke tas</h3>
+          <p>Sekali diambil lalu disimpan (cache), bisa dibaca kapan saja. Dikasih cover &amp; label nama (manifest) supaya bisa ditaruh di rak depan = <b>home screen</b>.</p>
+        </div>
+      </div>
+      <p class="sub" style="margin:14px 0 0">
+        <b>Service worker</b> = asisten yang berdiri di antara HP dan server. Ia yang memutuskan: ambil dari "tas" dulu, atau telepon server.
+      </p>
+    </section>
+
+    <section>
+      <div class="kicker">03 · Tiga pilar</div>
+      <h2>Apa saja yang ditambahkan?</h2>
+      <p class="sub">Hanya 3 hal wajib + ikon. Semua sudah ada di project.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="num">PILAR 1</div>
+          <h3>HTTPS / Secure context</h3>
+          <p>Syarat keamanan: service worker hanya boleh jalan di HTTPS. <code>localhost</code> dikecualikan untuk development. Deploy ke Netlify/Vercel = HTTPS otomatis.</p>
+        </div>
+        <div class="card">
+          <div class="num">PILAR 2</div>
+          <h3>Web App Manifest</h3>
+          <p>"KTP aplikasi": nama, ikon, warna tema, <code>start_url</code>, dan <code>display: standalone</code>. File <code>manifest.webmanifest</code> di-generate dari <code>vite.config.js</code>.</p>
+        </div>
+        <div class="card">
+          <div class="num">PILAR 3</div>
+          <h3>Service Worker</h3>
+          <p>Script background: <code>install → precache → intercept request → update</code>. Di-generate otomatis oleh <b>Workbox</b> menjadi <code>sw.js</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="kicker">04 · Alur kerja</div>
+      <h2>Apa yang terjadi saat user membuka Parakarsa?</h2>
+      <p class="sub">Urutan ini yang paling sering ditanya PIC.</p>
+      <ol class="flow">
+        <li>User buka URL <b>HTTPS</b> di Chrome.</li>
+        <li><b>index.html</b> diunduh → React + Vite jalan seperti biasa.</li>
+        <li><b>src/pwa.js</b> mendaftarkan <b>sw.js</b> ke browser.</li>
+        <li>SW <b>install</b>: semua aset build disimpan ke Cache Storage (<b>app shell</b>, 35 file ±3,6 MB).</li>
+        <li>SW <b>activate</b> → langsung mengontrol tab yang sedang dibuka.</li>
+        <li>Browser baca manifest + cek syarat → memicu <b>beforeinstallprompt</b>.</li>
+        <li>User klik <b>"Pasang"</b> → Android bikin ikon + splash screen.</li>
+        <li>Buka dari ikon → <b>standalone</b>, tanpa address bar, status bar ikut warna brand.</li>
+        <li>Internet mati → SW jawab dari cache; <b>/main</b> dll tidak 404.</li>
+        <li>Ada deploy baru → toast <b>"Versi baru tersedia"</b> → klik Perbarui.</li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="kicker">05 · Keputusan teknis</div>
+      <h2>Kenapa PWA, bukan Flutter?</h2>
+      <p class="sub">Ini bagian yang menentukan approval PIC.</p>
+      <table>
+        <thead><tr><th>Aspek</th><th>Web biasa</th><th class="hl">PWA (dipilih)</th><th>Flutter / native</th></tr></thead>
+        <tbody>
+          <tr><td>Kode</td><td>React + Vite</td><td class="hl">Sama persis, + 1 plugin</td><td>Codebase baru, Dart</td></tr>
+          <tr><td>Waktu &amp; biaya</td><td>—</td><td class="hl">Hampir tanpa rewrite</td><td>Project &amp; tim tambahan</td></tr>
+          <tr><td>Distribusi</td><td>URL</td><td class="hl">URL + bisa di-install</td><td>Play Store / App Store</td></tr>
+          <tr><td>Update</td><td>Deploy</td><td class="hl">Deploy langsung ke user</td><td>Upload + tunggu review</td></tr>
+          <tr><td>Offline</td><td>Tidak</td><td class="hl">Ya (app shell + data lokal)</td><td>Ya</td></tr>
+          <tr><td>Ikon di HP</td><td>Tidak</td><td class="hl">Ya</td><td>Ya</td></tr>
+          <tr><td>Tampilan mobile existing</td><td>—</td><td class="hl">Tetap terpakai</td><td>Harus dibuat ulang</td></tr>
+          <tr><td>Akses hardware penuh</td><td>Tidak</td><td>Terbatas</td><td>Penuh</td></tr>
+        </tbody>
+      </table>
+      <p class="sub" style="margin:16px 0 0">
+        <b>Kesimpulan:</b> targetnya "web koperasi bisa dibuka di Android seperti aplikasi" → PWA paling cepat &amp; hemat.
+        Flutter baru diperlukan kalau butuh fitur native berat. <b>Plugin yang dimaksud = <code>vite-plugin-pwa</code></b>.
+        Kalau nanti diminta APK/Play Store, bungkus dengan <b>PWABuilder / TWA</b> — kode web tetap sama.
+      </p>
+    </section>
+
+    <section>
+      <div class="kicker">06 · Batasan</div>
+      <h2>Yang bisa &amp; yang tidak (jangan over-promise)</h2>
+      <div class="two">
+        <div class="box yes">
+          <h3>✅ Bisa</h3>
+          <ul>
+            <li>Dipasang di Android, fullscreen tanpa address bar</li>
+            <li>Ikon, splash screen, shortcut (Dashboard, Kartu Anggota)</li>
+            <li><b>Offline</b> untuk seluruh halaman &amp; aset statis — sudah diuji</li>
+            <li>Update otomatis + notifikasi versi baru</li>
+            <li>Desain mobile existing tidak berubah</li>
+            <li>Font Google ikut ter-cache</li>
+          </ul>
+        </div>
+        <div class="box no">
+          <h3>⚠️ Terbatas</h3>
+          <ul>
+            <li>iOS: <i>Add to Home Screen</i> manual, tidak ada install prompt</li>
+            <li>Wajib HTTPS (kecuali localhost)</li>
+            <li>Akses hardware native tidak selengkap aplikasi native</li>
+            <li><b>Data dari API server tetap butuh internet</b></li>
+            <li>Tidak otomatis muncul di Play Store (perlu TWA)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="kicker">07 · Siap ditanya</div>
+      <h2>Prediksi pertanyaan PIC</h2>
+      <p class="sub">Klik untuk membuka jawaban singkatnya.</p>
+      <details open><summary>"Ini aplikasi atau website?"</summary><p>Website yang bisa dipasang seperti aplikasi. Satu codebase, satu deploy — bukan dua aplikasi.</p></details>
+      <details><summary>"Kenapa tidak jadi Flutter?"</summary><p>Untuk kebutuhan "buka di Android", PWA cukup. Flutter baru perlu kalau butuh fitur native penuh atau aplikasi mandiri di Play Store.</p></details>
+      <details><summary>"Kalau internet mati, datanya hilang?"</summary><p>Tampilan &amp; data lokal aman. Data yang bersumber dari server/API baru muncul saat online — PWA menjamin tampilan &amp; aset, bukan sinkronisasi realtime.</p></details>
+      <details><summary>"Bisa masuk Play Store?"</summary><p>Bisa. Dibungkus Trusted Web Activity (PWABuilder / Bubblewrap) jadi APK. Kode web tetap sama, hanya dibungkus.</p></details>
+      <details><summary>"iPhone bisa?"</summary><p>Bisa dibuka dan ditambahkan ke Home Screen, tetapi alur install tidak semulus Android dan push notification terbatas.</p></details>
+      <details><summary>"Update aplikasinya bagaimana?"</summary><p>Tinggal deploy. User mendapat toast "Versi baru tersedia", klik Perbarui, selesai — tanpa uninstall, tanpa review toko aplikasi.</p></details>
+      <details><summary>"Apakah desain mobile-nya berubah?"</summary><p>Tidak. Seluruh folder <code>src/mobile/</code> tetap dipakai apa adanya. Yang berubah hanya config, ikon, dan 2 file komponen baru.</p></details>
+    </section>
+
+    <section>
+      <div class="kicker">08 · Bukti</div>
+      <h2>Sudah diuji, bukan cuma teori</h2>
+      <p class="sub">Hasil pengujian Chrome headless pada build produksi (<code>npm run preview</code>).</p>
+      <div class="verify">
+        <span class="v">✓ manifestLinked: true</span>
+        <span class="v">✓ serviceWorkers: 1</span>
+        <span class="v">✓ swActive: true</span>
+        <span class="v">✓ controlled: true</span>
+        <span class="v">✓ secureContext: true</span>
+        <span class="v">✓ installPromptSupported: true</span>
+        <span class="v">✓ offline reload: tetap render</span>
+        <span class="v">✓ JS errors: none</span>
+      </div>
+      <p class="sub" style="margin:16px 0 0">
+        Cara demo: <code>npm install</code> → <code>npm run build</code> → <code>npm run preview</code> →
+        DevTools ▸ Application ▸ Manifest / Service Workers ▸ Lighthouse PWA ▸ Network: Offline + reload.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <b>Parakarsa · PWA</b> — React + Vite + <b>vite-plugin-pwa</b> (Workbox) ·
+    Dokumen pendamping: <b>docs/PWA-PENJELASAN.md</b>
+  </footer>
+</div>
+</body>
+</html>

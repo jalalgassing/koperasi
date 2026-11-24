@@ -16,13 +16,21 @@ import MemberCardPage from "./pages/member-card/MemberCardPage.jsx";
 import DashboardComingSoon from "./pages/dashboard/DashboardComingSoon.jsx";
 import { SIDEBAR_NAV } from "./data/sidebarNav.js";
 import { useAuth } from "./context/AuthContext.jsx";
+import useIsMobile from "./hooks/useIsMobile.js";
+import MobileLayout from "./mobile/MobileLayout.jsx";
+import MobileHome from "./mobile/pages/MobileHome.jsx";
+import MobileWorkforce from "./mobile/pages/MobileWorkforce.jsx";
+import MobileMemberId from "./mobile/pages/MobileMemberId.jsx";
+import MobileProfile from "./mobile/pages/MobileProfile.jsx";
+import MemberScanPage from "./mobile/pages/MemberScanPage.jsx";
+import { MOBILE_SUB_ROUTES } from "./mobile/pages/sub/index.jsx";
 
 const AUTH_ROUTES = ["/masuk", "/daftar"];
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
   return null;
 }
@@ -31,7 +39,9 @@ function ScrollToTop() {
 // Masuk kalau belum ada sesi. Lihat src/context/AuthContext.jsx.
 function RequireAuth({ children }) {
   const { isLoggedIn } = useAuth();
-  if (!isLoggedIn) return <Navigate to="/masuk" replace />;
+  const location = useLocation();
+  // "from" dipakai LoginPage untuk kembali ke halaman tujuan (mis. hasil scan QR).
+  if (!isLoggedIn) return <Navigate to="/masuk" replace state={{ from: location }} />;
   return children;
 }
 
@@ -50,7 +60,15 @@ const READY_PAGES = {
    "/main/member-card": <MemberCardPage />,
 };
 
+// Tampilan mobile (<= 768px) punya halaman sendiri untuk 4 tab utama.
+const MOBILE_PAGES = {
+  "/main": <MobileHome />,
+  "/main/shared-workforce": <MobileWorkforce />,
+  "/main/member-card": <MobileMemberId />,
+};
+
 export default function App() {
+  const isMobile = useIsMobile();
   const { pathname } = useLocation();
   const isAuthRoute = AUTH_ROUTES.includes(pathname);
   const isDashboardRoute = pathname.startsWith("/main");
@@ -70,7 +88,7 @@ export default function App() {
           <Route
             element={
               <RequireAuth>
-                <DashboardLayout pageTitle={<DashboardTitle />} />
+                {isMobile ? <MobileLayout /> : <DashboardLayout pageTitle={<DashboardTitle />} />}
               </RequireAuth>
             }
           >
@@ -79,10 +97,22 @@ export default function App() {
                 <Route
                   key={item.to}
                   path={item.to}
-                  element={READY_PAGES[item.to] || <ComingSoonRoute title={item.label} />}
+                  element={(isMobile && (MOBILE_PAGES[item.to] || MOBILE_SUB_ROUTES[item.to])) || READY_PAGES[item.to] || <ComingSoonRoute title={item.label} />}
                 />
               ))
             )}
+            <Route
+              path="/main/profile"
+              element={isMobile ? <MobileProfile /> : <ComingSoonRoute title="Profile" />}
+            />
+            {/* Halaman turunan mobile (notifikasi, bantuan, riwayat, sub-menu profil, dst) */}
+            {Object.entries(MOBILE_SUB_ROUTES)
+              .filter(([path]) => !SIDEBAR_NAV.some((g) => g.items.some((i) => i.to === path)))
+              .map(([path, el]) => (
+                <Route key={path} path={path} element={isMobile ? el : <ComingSoonRoute title="Mobile only" />} />
+              ))}
+            {/* Tujuan scan QR member ID: kartu anggota versi web */}
+            <Route path="/main/member-card/:memberId" element={<MemberScanPage />} />
           </Route>
         </Routes>
       </main>

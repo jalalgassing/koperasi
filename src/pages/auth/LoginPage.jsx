@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthLayout from "../../layouts/AuthLayout.jsx";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { EyeIcon, EyeOffIcon } from "./icons.jsx";
@@ -7,6 +7,7 @@ import "./AuthForm.css";
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { login } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({ identifier: "", password: "" });
@@ -30,7 +31,9 @@ export default function LoginPage() {
     // berhasil masuk sebagai akun demo ini. Ganti dengan panggilan API
     // sungguhan begitu backend autentikasi tersedia.
     login({ name: "Andika Putra", role: "Ketua Koperasi" });
-    navigate("/main");
+    // Kalau datang dari link/QR yang butuh login, kembali ke sana setelah masuk.
+    const from = location.state?.from;
+    navigate(from?.pathname?.startsWith("/main") ? `${from.pathname}${from.search || ""}` : "/main", { replace: true });
   };
 
   return (
